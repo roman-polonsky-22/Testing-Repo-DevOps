@@ -15,7 +15,6 @@ jobs:
         - name: Run Tests
           run: npm test
     deploy:
-      needs: test
       runs-on: ubuntu-latest
       steps:
         - name: Get code
@@ -28,5 +27,14 @@ jobs:
           run: npm ci
         - name: Build project
           run: npm run build
+        - name: Creating new folder
+          run: mkdir testing
+        - name: Cp files to created folder
+          run: cp -R * testing/
         - name: Deploy
           run: echo "Deploying ..."
+        - name: Deploy
+          uses: JamesIves/github-pages-deploy-action@v4
+          with:
+            folder: testing # The folder the action should deploy.
+  
