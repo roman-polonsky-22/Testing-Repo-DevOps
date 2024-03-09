@@ -37,9 +37,7 @@ jobs:
         - name: Deploy
           run: echo "Deploying ..."
         - name: Deploy to GitHub Pages
-          uses: crazy-max/ghaction-github-pages@v4
+          uses: actions/upload-artifact@v3
           with:
-            target_branch: main-pages
-            build_dir: testing
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            name: dist-files
+            path: testing
