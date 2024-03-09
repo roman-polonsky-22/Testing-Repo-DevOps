@@ -1,7 +1,5 @@
 name: Test Project
 on: push
-ACTIONS_RUNNER_DEBUG=true
-ACTIONS_STEP_DEBUG=true
 jobs:
     test:
       runs-on: ubuntu-latest
@@ -17,6 +15,9 @@ jobs:
         - name: Run Tests
           run: echo "Running tests"
     deploy:
+      environment:
+        ACTIONS_RUNNER_DEBUG: true
+        ACTIONS_STEP_DEBUG: true
       needs: test
       runs-on: ubuntu-latest
       steps:
