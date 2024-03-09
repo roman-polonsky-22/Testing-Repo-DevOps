@@ -30,8 +30,10 @@ jobs:
           run: echo "Building the project"
         - name: Creating new folder
           run: mkdir testing
-        - name: Cp files to created folder
-          run: cp -r * testing/
+        - name: Creating files inside the folder
+          run: |
+            touch testing/1.yaml
+            touch testing/2.yaml
         - name: Deploy
           run: echo "Deploying ..."
         - name: Deploy
