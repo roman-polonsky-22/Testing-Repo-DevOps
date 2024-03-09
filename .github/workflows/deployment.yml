@@ -45,4 +45,4 @@ jobs:
             path: testing
             env-url: FOOBAR
         - name: Use URL for something
-          run: echo "${{ env.FOOBAR }}"
+          run: echo $artifact-url
