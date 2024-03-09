@@ -1,7 +1,7 @@
 name: Test Project
 on: push
-ACTIONS_RUNNER_DEBUG: true
-ACTIONS_STEP_DEBUG: true
+ACTIONS_RUNNER_DEBUG=true
+ACTIONS_STEP_DEBUG=true
 jobs:
     test:
       runs-on: ubuntu-latest
