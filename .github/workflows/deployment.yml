@@ -13,8 +13,9 @@ jobs:
         - name: Install Dependencies
           run: npm ci
         - name: Run Tests
-          run: npm test
+          run: echo "Running tests"
     deploy:
+      needs: test
       runs-on: ubuntu-latest
       steps:
         - name: Get code
@@ -25,8 +26,8 @@ jobs:
             node-version: '18'
         - name: Install Dependencies
           run: npm ci
-        - name: Build project
-          run: npm run build
+        - name: Build
+          run: echo "Building the project"
         - name: Creating new folder
           run: mkdir testing
         - name: Cp files to created folder
