@@ -43,5 +43,6 @@ jobs:
           with:
             name: dist-files
             path: testing
-        - name: Output artifact url
-          run: echo 'Artifact ID is ${{ steps.artifact-upload-step.outputs.artifact-url }}'
+            env-url: FOOBAR
+        - name: Use URL for something
+          run: echo "${{ env.FOOBAR }}"
