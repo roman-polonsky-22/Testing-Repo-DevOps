@@ -36,8 +36,10 @@ jobs:
             touch testing/2.yaml
         - name: Deploy
           run: echo "Deploying ..."
-        - name: Push changes
-          uses: ad-m/github-push-action@master
+        - name: Deploy to GitHub Pages
+          uses: crazy-max/ghaction-github-pages@v4
           with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            branch: ${{ github.ref }}
+            target_branch: main-pages
+            build_dir: testing
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
