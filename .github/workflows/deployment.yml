@@ -36,8 +36,8 @@ jobs:
             touch testing/2.yaml
         - name: Deploy
           run: echo "Deploying ..."
-        - name: Deploy
-          uses: peaceiris/actions-gh-pages@v3
+        - name: Push changes
+          uses: ad-m/github-push-action@master
           with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: ./testing
+            branch: ${{ github.ref }}
