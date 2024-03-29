@@ -3,8 +3,9 @@ pipeline {
     environment {
         // Define SonarQube scanner properties here
         SONARQUBE_SCANNER_VERSION = '4.6'
-        SONAR_PROJECT_KEY = 'sqp_cd7da9003f50ce7d5b08a7d50dfc591498934ac8'
-        SONAR_HOST_URL = 'localhost:9000'
+        SONAR_PROJECT_KEY = 'test'
+        SONAR_HOST_URL = 'http://localhost:9000'
+        SONAR_AUTH_TOKEN = 'sqp_cd7da9003f50ce7d5b08a7d50dfc591498934ac8'
         // SONAR_AUTH_TOKEN is ideally set in Jenkins credentials
     }
     stages {
