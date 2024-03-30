@@ -27,6 +27,9 @@ app.get('/index', (req,response) =>{
     });
 
     //get wikip search string
+    if (!String(url).startsWith('https://example.com/') && !String(url).startsWith('https://www.example.com/')) {
+        throw new Error('Potential SSRF attempt');
+    }
     request(url,(err,res, body) =>{
         if(err) {
             response.redirect('404');
